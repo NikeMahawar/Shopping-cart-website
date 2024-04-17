@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Profile Home</title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/profileHome.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/dcstyle.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/products.css') }} />
+</head>
+<body>
+<div id="title">
+	<a href="/">
+		<img id="logo" src= {{ url_for('static', filename='images/logo.png') }} />
+	</a>
+	<input type="text" name="searchQuery" placeholder="Search..">
+
+	{% if not loggedIn %}
+	<div id="signInButton">
+		<a class="link" href="/loginForm">Sign In</a>
+	</div>
+	{% else %}
+	<div class="dropdown">
+		<button class="dropbtn">Hello, {{firstName}}</button>
+		<div class="dropdown-content">
+			<a href="/cart">Your orders</a>
+			<a href="/account/profile">Your profile</a>
+			<hr>
+			<a href="/logout">Sign Out</a>
+		</div>
+	</div>
+	{% endif %}
+	<div id="kart">
+		<a class="link" href="/cart" style="text-decoration:none">
+			<img src={{url_for('static', filename='images/shoppingCart.png')}} id="cartIcon" />
+			CART {{noOfItems}}
+		</a>
+	</div>
+</div>
+<br>
+<div class="display">
+	<center>
+	<button class="button-49" role="button"><a style="text-decoration:none" href="/account/profile/edit">Edit Profile</a><br></button><br><br>
+	<button class="button-49" role="button"><a style="text-decoration:none" href="/account/profile/changePassword">Change password</a></button>
+	</center>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+#logo {
+	height: 100px;
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 20px;
+	float: left;
+
+}
+
+#title {
+	height: 145px;
+    width: 100%;
+    display: flex;
+    align-items:center;
+    padding: 0 150px;
+    gap: 50px;
+    position: fixed;
+    z-index: 999;
+}
+
+#title>input[type=text] {
+	float: right;
+    padding: 6px;
+    border: #000;
+    margin-top: 1px;
+    margin-right: 30px;
+    font-size: 17px;
+    background-color: #000000;
+    border-radius: 20px;
+    opacity: 40%;
+}
+
+#searchButton {
+	height: 25px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 20px;
+	float: left;
+}
+
+.dropbtn {
+    height: 50px;
+    width: 150px;
+	border-radius: 20px;
+	background-color: #FF9843;
+	color: white;
+	padding: 16px;
+	font-size: 15px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropdown {
+	position: relative;
+	float: left;
+}
+
+.dropdown-content  {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+	font-size: 14px;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: gray;
+}
+
+#signInButton {
+	color: yellow;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	float: left;
+}
+#kart {
+	color: white;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	float: left;
+}
+
+#cartIcon {
+	height: 50px;
+}
+

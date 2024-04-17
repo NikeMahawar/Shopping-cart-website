@@ -1,0 +1,57 @@
+#itemImage {
+    height: 200px;
+    width: 150px;
+    border-radius: 8px; /* Add a border-radius for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+.display {
+    margin: 20px;
+    padding: 20px; /* Add padding for a cleaner look */
+    border: 1px solid #ddd; /* Add a border for separation */
+    border-radius: 12px; /* Add rounded corners to the container */
+}
+
+table {
+    border-collapse: collapse; /* Collapse borders for a cleaner table appearance */
+    width: 100%; /* Make the table full width */
+}
+
+table, th, td {
+    border: 1px solid #ddd; /* Add borders to table elements */
+    padding: 10px; /* Add padding to table cells */
+}
+
+#productName>td {
+    text-align: center;
+    font-weight: bold;
+    color: #333; /* Set a dark color for better readability */
+}
+
+#productPrice>td {
+    text-align: center;
+    color: #4CAF50; /* Set a green color for price */
+    font-size: 18px; /* Adjust font size for price */
+}
+
+.displayCategory ul li {
+    font-size: 18px; /* Adjust font size for category items */
+    list-style-type: none; /* Remove default list styling */
+    margin-bottom: 8px; /* Add some spacing between list items */
+}
+.display>.displayCategory>center>h2{
+    color: red;
+}
+
+.display>.displayCategory>ul>li>a{
+    color: #353535;
+}
+
+.itemslist>center>h2{
+    color: red;
+}
+
+/* Optional: Add a background color to the body for better contrast */
+body {
+    font-family: 'Arial', sans-serif; /* Choose a common font for better cross-browser compatibility */
+}

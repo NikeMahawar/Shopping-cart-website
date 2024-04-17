@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Welcome</title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/home.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/topStyle.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/styles.css') }} />
+</head>
+<body>
+<div id="title">
+	<a href="/">
+		<img id="logo" src= {{ url_for('static', filename='images/logo.png') }} />
+	</a>
+	<input type="text" name="searchQuery" placeholder="Search..">
+
+	{% if not loggedIn %}
+	<div id="signInButton">
+		<a class="link" href="/loginForm" style="text-decoration:none">Sign In</a>
+	</div>
+	{% else %}
+	<div class="dropdown">
+		<button class="dropbtn">Hello, {{firstName}}</button>
+		<div class="dropdown-content">
+			<a href="/cart">Your orders</a>
+			<a href="/account/profile">Your profile</a>
+			<hr>
+			<a href="/logout">Sign Out</a>
+		</div>
+	</div>
+	{% endif %}
+	<div id="kart">
+		<a class="link" href="/cart" style="text-decoration:none">
+			<img src={{url_for('static', filename='images/shoppingCart.png')}} id="cartIcon" />
+			CART {{noOfItems}}
+		</a>
+	</div>
+</div>
+<video autoplay loop muted src={{url_for('static', filename='uploads/bgv.mp4')}} ></video>
+    <div id="main">
+        <div id="page1">
+            <h1>SHOP. NOW. ONLINE</h1>
+            <h2>A few clicks is all it takes.</h2>
+        </div>
+        <div id="page2">
+            <div id="scroller">
+                <div id="scroller-in">
+                    <h4>SMART GADGETS</h4>
+                    <h4>FASHION AND CLOTHING</h4>
+                    <h4>DAILY ESSENTIALS</h4>
+                    <h4>TRAVEL AND LEISURE</h4>
+                    <h4>HEALTHY LIFESTYLE</h4>
+                </div>
+                <div id="scroller-in">
+                    <h4>SMART GADGETS</h4>
+                    <h4>FASHION AND CLOTHING</h4>
+                    <h4>DAILY ESSENTIALS</h4>
+                    <h4>TRAVEL AND LEISURE</h4>
+                    <h4>HEALTHY LIFESTYLE</h4>
+                </div>
+            </div>
+            <center>
+                <h1>CATEGORIES</h1>
+            </center>
+<div class="display">
+	<div class="displayCategory">
+		<center>
+			<h2>Shop by Category: </h2>
+		</center>
+		<ul>
+			{% for row in categoryData %}
+			<li><a href="/displayCategory?categoryId={{row[0]}}" style="text-decoration:none">{{row[1]}}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+
+
+	<div class="itemslist">
+		<center>
+			<h2>Items</h2>
+		</center>
+		{% for data in itemData %}
+		<table>
+			<tr id="productName">
+				{% for row in data %}
+				<td>
+					{{row[1]}}
+				</td>
+				{% endfor %}
+			</tr>
+			<tr id="productImage">
+				{% for row in data %}
+				<td>
+					<a href="/productDescription?productId={{row[0]}}">
+						<img src={{ url_for('static', filename='uploads/' + row[4]) }} id="itemImage" />
+					</a>
+				</td>
+				{% endfor %}
+			</tr>
+			<tr id="productPrice">
+				{% for row in data %}
+				<td>
+					₹{{row[2]}}
+				</td>
+				{% endfor %}
+			</tr>
+		</table>
+		{% endfor %}
+	</div>
+</div>
+        <div id="footer">
+            <div class="left-footer">
+                <img src={{url_for('static', filename='images/logo.png')}}>
+            </div>
+            <div class="right-footer">
+                <h2>HELP</h2>
+            </div>
+            <div class="right-footer">
+                <h2>CONTACT US</h2>
+            </div>
+            <div class="right-footer">
+                <h2>ABOUT US</h2>
+            </div>
+            <div class="right-footer">
+                <h2>PRIVACY POLICY</h2>
+            </div>
+            <div class="right-footer">
+                <h2>COPYRIGHT</h2>
+            </div>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src={{ url_for('static', filename='js/script.js') }}></script>
+</body>
+</html>
+

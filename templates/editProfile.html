@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Edit Profile </title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/editprofile.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/dcstyle.css') }} />
+</head>
+<body>
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+      <div class="loginbackground box-background--white padding-top--64">
+        <div class="loginbackground-gridContainer">
+          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
+            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+            </div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 2 / auto / 5;">
+            <div class="box-root box-divider--light-all-2 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 6 / start / auto / 2;">
+            <div class="box-root box-background--blue800" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 7 / start / auto / 4;">
+            <div class="box-root box-background--blue animationLeftRight" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 8 / 4 / auto / 6;">
+            <div class="box-root box-background--gray100 animationLeftRight tans3s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 2 / 15 / auto / end;">
+            <div class="box-root box-background--cyan200 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 3 / 14 / auto / end;">
+            <div class="box-root box-background--blue animationRightLeft" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 4 / 17 / auto / 20;">
+            <div class="box-root box-background--gray100 animationRightLeft tans4s" style="flex-grow: 1;"></div>
+          </div>
+          <div class="box-root flex-flex" style="grid-area: 5 / 14 / auto / 17;">
+            <div class="box-root box-divider--light-all-2 animationRightLeft tans3s" style="flex-grow: 1;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+        <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+          <h1><a href="#" rel="dofollow">EDIT PROFILE</a></h1>
+        </div>
+        <div class="formbg-outer">
+          <div class="formbg">
+            <div class="formbg-inner padding-horizontal--48">
+              <form action="/updateProfile" method="POST" id="stripe-login">
+                <div class="field padding-bottom--24">
+                  <p>Email:<input type="email" name="email" value={{profileData[1]}} readonly="readonly"></p><br>
+		          <p>First Name:<input type="text" name="firstName" value={{profileData[2]}}></p><br>
+		          <p>Last Name: <input type="text" name="lastName" value={{profileData[3]}}></p><br>
+		          <p>Address 1: <input type="text" name="address1" value={{profileData[4]}}></p><br>
+		          <p>Address 2: <input type="text" name="address2" value={{profileData[5]}}></p><br>
+		          <p>Zip Code: <input type="text" name="zipcode" value={{profileData[6]}}></p><br>
+		          <p>City: <input type="text" name="city" value={{profileData[7]}}></p><br>
+		          <p>State: <input type="text" name="state" value={{profileData[8]}}></p><br>
+		          <p>Country: <input type="text" name="country" value={{profileData[9]}}></p><br>
+		          <p>Phone Number: <input type="text" name="phone" value={{profileData[10]}}></p>
+                </div>
+                <div class="field padding-bottom--24">
+                  <input type="submit" name="submit" value="Save">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
